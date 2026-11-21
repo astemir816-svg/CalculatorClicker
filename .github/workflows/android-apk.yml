@@ -15,7 +15,10 @@ jobs:
 
       - name: Unpack project
         run: unzip -q "CalculatorClicker-cloud-build(2).zip"
-
+      - name: Check project structure
+        run: |
+          ls -la
+          find . -maxdepth 4 \( -name settings.gradle -o -name settings.gradle.kts \) -print
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
